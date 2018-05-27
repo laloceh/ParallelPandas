@@ -21,9 +21,6 @@ iris = pd.DataFrame(sns.load_dataset('iris'))
 
 def parallelize_dataframe(df, func):
     df_split = np.array_split(df, num_partitions)
-    
-    print df_split
-    sys.exit(99)
     pool = Pool(num_cores)
     
     df = pd.concat(pool.map(func, df_split))

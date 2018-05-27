@@ -37,3 +37,4 @@ def multiply_columns(data):
 start = time.time()
 iris = parallelize_dataframe(iris, multiply_columns)
 print time.time() - start
+print iris
